@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://dyabchiki.servegame.com/sitemap.xml
