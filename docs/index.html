@@ -1,81 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBXTLKYYZ6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dyabchiki Discord</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  gtag('config', 'G-NBXTLKYYZ6');
-</script>
-    <meta name="msvalidate.01" content="AAE7A2EBD13B8899ED1B3D7AC7CC77B2" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Dyabchiki – Україномовний ігровий Discord-сервер">
-    <meta name="description" content="Dyabchiki – це активне україномовне ком'юніті для геймерів! Грай у різні ігри, спілкуйся з однодумцями та приєднуйся до нашого Minecraft-сервера. Приєднуйся зараз!">
-    <meta name="keywords" content="Dyabchiki, Discord сервер, ігровий сервер, Minecraft сервер, україномовне ком'юніті, ігри, український Discord">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Dyabchiki – Україномовний ігровий Discord-сервер">
-    <meta property="og:description" content="Приєднуйся до Dyabchiki – місця, де українські геймери збираються разом, грають та спілкуються. Маємо власний Minecraft-сервер!">
-    <meta property="og:url" content="https://discord.gg/ВАШ_ІНВАЙТ">
-    <meta property="og:image" content="https://ВАШ_ЛОГОТИП_АБО_БАНЕР">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dyabchiki – Україномовний ігровий Discord-сервер">
-    <meta name="twitter:description" content="Приєднуйся до нас, грай у улюблені ігри та досліджуй наш Minecraft-сервер!">
-    <meta name="twitter:image" content="https://ВАШ_ЛОГОТИП_АБО_БАНЕР">
-    <meta name="google-site-verification" content="GjwdjLHeDI8IUIchYrsn6o5pyIsWm4uB6a94sup-4X8" />
-    <title>Discord Server Dyabchiki</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: radial-gradient(circle, rgba(18, 28, 53, 1) 0%, rgba(10, 15, 30, 1) 100%);
-            overflow: hidden;
-        }
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.2;
-        }
-        .container {
-            position: relative;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-        button {
-            padding: 12px 24px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            background-color: #5865F2;
-            color: white;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background-color: #4752C4;
-        }
-    </style>
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at center, #121c35, #0a0f1e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .background-pattern {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      z-index: 2;
+    }
+
+    .glass-card {
+        width: 460px;
+        max-width: 95vw;
+        min-height: 420px;
+        padding: 30px 25px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        color: #fff;
+        text-align: center;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        opacity: 0.5;
+        transform: scale(0.95);
+        pointer-events: auto;
+    }   
+
+    .glass-card.active {
+      opacity: 1;
+      transform: scale(1.03);
+      z-index: 5;
+    }
+
+    .glass-card h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #f3f4f6;
+    }
+
+    .glass-card p {
+      font-size: 16px;
+      color: #d1d5db;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .glass-card a button {
+      padding: 10px 22px;
+      font-size: 16px;
+      background-color: #5865F2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .glass-card a button:hover {
+      background-color: #4752C4;
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .glass-card {
+        width: 95%;
+      }
+    }
+  </style>
 </head>
-    
 <body>
-    <div class="background"></div>
-    <div class="container">
-        <a href="https://discord.gg/9g8eVYarFr" target="_blank">
-            <button type="button">Перейти в Discord Dyabchiki</button>
-        </a>
-        <h1>Dyabchiki – україномовне ігрове ком'юніті з Discord-сервером для спілкування, гри та розвитку. Наш Minecraft-сервер забезпечує комфортне виживання, унікальні плагіни та захист від читерів. 
-            Тут є чати, стріми, ролі, новини ігор та підтримка української мови. Долучайтеся!</h1>
+  <div class="background-pattern"></div>
+
+  <div class="container">
+    <div id="home" class="glass-card active">
+      <h1>Dyabchiki – твоє місце серед українських геймерів</h1>
+      <p>
+        Приєднуйся до нашого Discord-серверу, де живе активне україномовне ком’юніті!<br><br>
+        Тут ти знайдеш Minecraft-сервер із плагінами, захистом від читерів і теплим чатом. Ми щодня граємо, спілкуємось, ділимось мемами, стрімимо, обговорюємо новини індустрії та підтримуємо одне одного.<br><br>
+        Підтримуй українське, грай із нами!
+      </p>
+      <a href="https://discord.gg/9g8eVYarFr" target="_blank">
+        <button>Увійти в Discord</button>
+      </a>
     </div>
+
+    <div id="donate" class="glass-card">
+      <h1>Підтримай Dyabchiki</h1>
+      <p>
+        Твоя підтримка допомагає нам розвивати сервер, покращувати функціонал Minecraft, організовувати івенти та залишатися незалежною українською спільнотою.<br><br>
+        Усі донати йдуть на оплату хостингу, безпеку сервера, нові плагіни та бонуси для учасників.<br><br>
+        Ми вдячні кожному, хто підтримує проєкт навіть найменшим внеском ❤️
+      </p>
+      <a href="https://send.monobank.ua/jar/73YW2xQWC4" target="_blank">
+        <button>Задонатити</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const home = document.getElementById('home');
+    const donate = document.getElementById('donate');
+
+    home.addEventListener('click', () => {
+      home.classList.add('active');
+      donate.classList.remove('active');
+    });
+
+    donate.addEventListener('click', () => {
+      donate.classList.add('active');
+      home.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
